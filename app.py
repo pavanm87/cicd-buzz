@@ -18,7 +18,7 @@ def generate_buzz():
 @app.route("/name")
 def generate_name():
     page = '<html><body><h1>'
-    page += Hi I Am Pavan.
+    page += 'Hi I Am Pavan.'
     page += '</h1></body></html>'
     return page
 
