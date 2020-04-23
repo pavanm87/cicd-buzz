@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask,request,jsonify
 from buzz import generator
 
 app = Flask(__name__)
@@ -31,7 +31,7 @@ def index():
 @app.route('/data')
 def names():
     data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
-    return data
+    return jsonify(data)
 
 
 if __name__ == "__main__":
