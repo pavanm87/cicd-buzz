@@ -4,22 +4,6 @@ from buzz import generator
 
 app = Flask(__name__)
 
-"""
-@app.route("/")
-def generate_buzz():
-    page = '<html><body><h1>'
-    page += generator.generate_buzz()
-    page += '</h1></body></html>'
-    return page
-
-@app.route("/name")
-def generate_name():
-    page = '<html><body><h1>'
-    page += Hi I Am Pavan.
-    page += '</h1></body></html>'
-    return page
-"""
-
 @app.errorhandler(404)
 def page_not_found(error):
         return 'Rota com problema {}'.format(request.url), 404
