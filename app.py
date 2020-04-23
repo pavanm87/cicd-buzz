@@ -4,6 +4,7 @@ from buzz import generator
 
 app = Flask(__name__)
 
+"""
 @app.route("/")
 def generate_buzz():
     page = '<html><body><h1>'
@@ -17,6 +18,23 @@ def generate_name():
     page += Hi I Am Pavan.
     page += '</h1></body></html>'
     return page
+"""
+
+@app.errorhandler(404)
+def page_not_found(error):
+        return 'Rota com problema {}'.format(request.url), 404
+
+@app.route("/")
+@app.route("/index")
+def index():
+    return 'Flask is running!'
+
+
+@app.route('/data')
+def names():
+    data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
+    return jsonify(data)
+
 
 
 if __name__ == "__main__":
