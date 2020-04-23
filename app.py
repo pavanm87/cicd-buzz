@@ -8,6 +8,20 @@ app = Flask(__name__)
 def page_not_found(error):
         return 'Rota com problema {}'.format(request.url), 404
 
+@app.route("/buzz")
+def generate_buzz():
+    page = '<html><body><h1>'
+    page += generator.generate_buzz()
+    page += '</h1></body></html>'
+    return page
+
+@app.route("/name")
+def generate_name():
+    page = '<html><body><h1>'
+    page += Hi I Am Pavan.
+    page += '</h1></body></html>'
+    return page
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -17,8 +31,7 @@ def index():
 @app.route('/data')
 def names():
     data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
-    return jsonify(data)
-
+    return data
 
 
 if __name__ == "__main__":
