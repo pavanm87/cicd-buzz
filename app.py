@@ -12,7 +12,7 @@ def generate_buzz():
     return page
 
 @app.route("/name")
-def generate_buzz():
+def generate_name():
     page = '<html><body><h1>'
     page += Hi I Am Pavan.
     page += '</h1></body></html>'
